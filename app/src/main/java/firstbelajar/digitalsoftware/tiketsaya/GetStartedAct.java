@@ -30,10 +30,10 @@ public class GetStartedAct extends AppCompatActivity {
         button_sign_in = findViewById(R.id.button_sign_in);
         btn_new_account_on_getStarted= findViewById(R.id.btn_new_account_on_getStarted);
 
-        emblemApp.setAnimation(topToBottom);
-        introApp.setAnimation(topToBottom);
-        button_sign_in.setAnimation(bottomToTop);
-        btn_new_account_on_getStarted.setAnimation(bottomToTop);
+        emblemApp.startAnimation(topToBottom);
+        introApp.startAnimation(topToBottom);
+        button_sign_in.startAnimation(bottomToTop);
+        btn_new_account_on_getStarted.startAnimation(bottomToTop);
 
         button_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override

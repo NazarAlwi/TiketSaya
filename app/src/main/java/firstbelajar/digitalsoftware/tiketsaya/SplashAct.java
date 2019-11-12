@@ -25,8 +25,8 @@ public class SplashAct extends AppCompatActivity {
         appLogo = findViewById(R.id.app_logo);
         appSubtitle = findViewById(R.id.app_subtitle);
 
-        appLogo.setAnimation(appSplash);
-        appSubtitle.setAnimation(bottomToTop);
+        appLogo.startAnimation(appSplash);
+        appSubtitle.startAnimation(bottomToTop);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
