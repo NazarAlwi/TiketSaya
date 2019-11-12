@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TiketSaya</string>
+    <string name="slogan">Wisata Jadi Lebih Asyik!</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="username">Username</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="continue_label">Continue</string>
+    <string name="name_label">Nama</string>
+    <string name="bio_label">Bio</string>
+    <string name="explore">Explore Now</string>
+</resources>
