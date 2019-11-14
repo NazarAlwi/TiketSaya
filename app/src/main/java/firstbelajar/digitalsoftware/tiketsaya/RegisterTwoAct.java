@@ -74,6 +74,9 @@ import com.squareup.picasso.Picasso;
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_continue.setEnabled(false);
+                btn_continue.setText("Loading...");
+
                 reference = FirebaseDatabase.getInstance().getReference().child("Users").child(new_username_key);
                 firebaseStorage = FirebaseStorage.getInstance().getReference().child("Photousers").child(new_username_key);
 
