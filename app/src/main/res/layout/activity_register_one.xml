@@ -82,6 +82,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_input_edit"
@@ -111,6 +112,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_input_edit"
@@ -140,11 +142,12 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/edt_email_address"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_input_edit"
                 android:fontFamily="@font/mmedium"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:lines="1"
                 android:paddingLeft="12dp"
                 android:textColor="@color/blackPrimary" />
