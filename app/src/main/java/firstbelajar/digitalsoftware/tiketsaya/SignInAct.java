@@ -63,7 +63,7 @@ public class SignInAct extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(username_key, edtUsername.getText().toString());
                                 editor.apply();
-                                
+
                                 Intent goToHome = new Intent(SignInAct.this, HomeAct.class);
                                 startActivity(goToHome);
                             } else {
