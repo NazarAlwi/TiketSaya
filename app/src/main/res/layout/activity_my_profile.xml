@@ -121,6 +121,7 @@
             android:background="#EDEDED" />
 
         <LinearLayout
+            android:id="@+id/my_ticket"
             android:orientation="horizontal"
             android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
