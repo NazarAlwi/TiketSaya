@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SuccessBuyTicketAct extends AppCompatActivity {
+public class SuccessBuyTicketActivity extends AppCompatActivity {
     ImageView imgSuccessBuy;
     TextView tvTitleSuccessBuy, tvSubtitleSuccessBuy;
     Button btnViewTickets, btnMyDashboard;

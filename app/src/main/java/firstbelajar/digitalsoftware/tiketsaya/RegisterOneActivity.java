@@ -15,51 +15,49 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 
-public class RegisterOneAct extends AppCompatActivity {
+public class RegisterOneActivity extends AppCompatActivity {
+    public static final String USERNAME_KEY = "username_key";
+    private String mUsernameKey = "";
 
-    LinearLayout btn_back;
-    Button btn_continue;
-    EditText edtUsername, edtPassword, edtEmailAddress;
-    DatabaseReference reference;
-
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
+    LinearLayout linearBtnBack;
+    Button buttonContinue;
+    EditText editUsername, editPassword, editEmailAddress;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_one);
 
-        btn_back = findViewById(R.id.btn_back);
-        btn_continue = findViewById(R.id.btn_continue);
-        edtUsername = findViewById(R.id.edt_username);
-        edtPassword = findViewById(R.id.edt_password);
-        edtEmailAddress = findViewById(R.id.edt_email_address);
+        linearBtnBack = findViewById(R.id.btn_back);
+        buttonContinue = findViewById(R.id.btn_continue);
+        editUsername = findViewById(R.id.edt_username);
+        editPassword = findViewById(R.id.edt_password);
+        editEmailAddress = findViewById(R.id.edt_email_address);
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
+        linearBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backToSignIn = new Intent(RegisterOneAct.this, SignInAct.class);
+                Intent backToSignIn = new Intent(RegisterOneActivity.this, SignInActivity.class);
                 startActivity(backToSignIn);
             }
         });
-        btn_continue.setOnClickListener(new View.OnClickListener() {
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(username_key, edtUsername.getText().toString());
+                editor.putString(mUsernameKey, editUsername.getText().toString());
                 editor.apply();
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(edtUsername.getText().toString());
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(editUsername.getText().toString());
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        dataSnapshot.getRef().child("username").setValue(edtUsername.getText().toString());
-                        dataSnapshot.getRef().child("password").setValue(edtPassword.getText().toString());
-                        dataSnapshot.getRef().child("email_address").setValue(edtEmailAddress.getText().toString());
+                        dataSnapshot.getRef().child("username").setValue(editUsername.getText().toString());
+                        dataSnapshot.getRef().child("password").setValue(editPassword.getText().toString());
+                        dataSnapshot.getRef().child("email_address").setValue(editEmailAddress.getText().toString());
                         dataSnapshot.getRef().child("balance").setValue(800);
                     }
 
@@ -69,7 +67,7 @@ public class RegisterOneAct extends AppCompatActivity {
                     }
                 });
 
-                Intent goToRegisterTwo = new Intent(RegisterOneAct.this, RegisterTwoAct.class);
+                Intent goToRegisterTwo = new Intent(RegisterOneActivity.this, RegisterTwoActivity.class);
                 startActivity(goToRegisterTwo);
             }
         });

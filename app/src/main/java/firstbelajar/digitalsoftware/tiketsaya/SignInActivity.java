@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SignInAct extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 
     TextView btn_new_account;
     Button btn_sign_in;
@@ -40,7 +40,7 @@ public class SignInAct extends AppCompatActivity {
         btn_new_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToRegisterOne = new Intent(SignInAct.this, RegisterOneAct.class);
+                Intent goToRegisterOne = new Intent(SignInActivity.this, RegisterOneActivity.class);
                 startActivity(goToRegisterOne);
             }
         });
@@ -64,7 +64,7 @@ public class SignInAct extends AppCompatActivity {
                                 editor.putString(username_key, edtUsername.getText().toString());
                                 editor.apply();
 
-                                Intent goToHome = new Intent(SignInAct.this, HomeAct.class);
+                                Intent goToHome = new Intent(SignInActivity.this, HomeActivity.class);
                                 startActivity(goToHome);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Password salah", Toast.LENGTH_SHORT).show();

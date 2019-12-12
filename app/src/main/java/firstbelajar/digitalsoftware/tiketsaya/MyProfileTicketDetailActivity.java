@@ -3,11 +3,11 @@ package firstbelajar.digitalsoftware.tiketsaya;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class EditProfileAct extends AppCompatActivity {
+public class MyProfileTicketDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_my_profile_ticket_detail);
     }
 }

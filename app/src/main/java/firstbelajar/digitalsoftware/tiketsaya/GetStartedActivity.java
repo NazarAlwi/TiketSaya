@@ -10,12 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GetStartedAct extends AppCompatActivity {
+public class GetStartedActivity extends AppCompatActivity {
 
-    Button button_sign_in, btn_new_account_on_getStarted;
+    Button buttonSignIn, buttonNewAccountOnGetStarted;
     Animation topToBottom, bottomToTop;
-    ImageView emblemApp;
-    TextView introApp;
+    ImageView imageEmblemApp;
+    TextView textIntroApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,27 +25,27 @@ public class GetStartedAct extends AppCompatActivity {
         topToBottom = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom);
         bottomToTop = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top);
 
-        emblemApp = findViewById(R.id.emblem_app);
-        introApp = findViewById(R.id.intro_app);
-        button_sign_in = findViewById(R.id.button_sign_in);
-        btn_new_account_on_getStarted= findViewById(R.id.btn_new_account_on_getStarted);
+        imageEmblemApp = findViewById(R.id.emblem_app);
+        textIntroApp = findViewById(R.id.intro_app);
+        buttonSignIn = findViewById(R.id.button_sign_in);
+        buttonNewAccountOnGetStarted= findViewById(R.id.btn_new_account_on_getStarted);
 
-        emblemApp.startAnimation(topToBottom);
-        introApp.startAnimation(topToBottom);
-        button_sign_in.startAnimation(bottomToTop);
-        btn_new_account_on_getStarted.startAnimation(bottomToTop);
+        imageEmblemApp.startAnimation(topToBottom);
+        textIntroApp.startAnimation(topToBottom);
+        buttonSignIn.startAnimation(bottomToTop);
+        buttonNewAccountOnGetStarted.startAnimation(bottomToTop);
 
-        button_sign_in.setOnClickListener(new View.OnClickListener() {
+        buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToSign = new Intent(GetStartedAct.this, SignInAct.class);
+                Intent goToSign = new Intent(GetStartedActivity.this, SignInActivity.class);
                 startActivity(goToSign);
             }
         });
-        btn_new_account_on_getStarted.setOnClickListener(new View.OnClickListener() {
+        buttonNewAccountOnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToRegisterOne = new Intent(GetStartedAct.this, RegisterOneAct.class);
+                Intent goToRegisterOne = new Intent(GetStartedActivity.this, RegisterOneActivity.class);
                 startActivity(goToRegisterOne);
             }
         });

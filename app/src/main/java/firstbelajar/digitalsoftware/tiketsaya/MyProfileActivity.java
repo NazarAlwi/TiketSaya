@@ -7,30 +7,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class MyProfileAct extends AppCompatActivity {
-    private LinearLayout myTicket;
-    private Button btnEditProfile;
+public class MyProfileActivity extends AppCompatActivity {
+    LinearLayout linearBtnMyTicket;
+    Button buttonEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-        myTicket = findViewById(R.id.my_ticket);
-        btnEditProfile = findViewById(R.id.btn_edit_profile);
+        linearBtnMyTicket = findViewById(R.id.my_ticket);
+        buttonEditProfile = findViewById(R.id.btn_edit_profile);
 
-        myTicket.setOnClickListener(new View.OnClickListener() {
+        linearBtnMyTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToMyTicketDetail = new Intent(MyProfileAct.this, MyProfileTicketDetailAct.class);
+                Intent goToMyTicketDetail = new Intent(MyProfileActivity.this, MyProfileTicketDetailActivity.class);
                 startActivity(goToMyTicketDetail);
             }
         });
 
-        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+        buttonEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToEditProfile = new Intent(MyProfileAct.this, EditProfileAct.class);
+                Intent goToEditProfile = new Intent(MyProfileActivity.this, EditProfileActivity.class);
                 startActivity(goToEditProfile);
             }
         });

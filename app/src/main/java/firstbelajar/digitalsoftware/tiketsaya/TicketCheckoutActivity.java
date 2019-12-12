@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TicketCheckoutAct extends AppCompatActivity {
+public class TicketCheckoutActivity extends AppCompatActivity {
 
     Button btnBuyTicket, btnMinus, btnPlus;
     TextView ticket_count, tvTotalHarga, tvMyBalance;
@@ -96,7 +96,7 @@ public class TicketCheckoutAct extends AppCompatActivity {
         btnBuyTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToSuccessBuy = new Intent(TicketCheckoutAct.this, SuccessBuyTicketAct.class);
+                Intent goToSuccessBuy = new Intent(TicketCheckoutActivity.this, SuccessBuyTicketActivity.class);
                 startActivity(goToSuccessBuy);
             }
         });

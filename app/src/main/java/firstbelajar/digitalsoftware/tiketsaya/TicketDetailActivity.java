@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TicketDetailAct extends AppCompatActivity {
+public class TicketDetailActivity extends AppCompatActivity {
 
     Button btnBuyTicket;
 
@@ -19,7 +19,7 @@ public class TicketDetailAct extends AppCompatActivity {
         btnBuyTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToCheckout = new Intent(TicketDetailAct.this, TicketCheckoutAct.class);
+                Intent goToCheckout = new Intent(TicketDetailActivity.this, TicketCheckoutActivity.class);
                 startActivity(goToCheckout);
             }
         });

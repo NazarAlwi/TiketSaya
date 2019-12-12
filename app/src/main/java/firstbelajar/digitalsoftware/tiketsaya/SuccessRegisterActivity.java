@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SuccessRegisterAct extends AppCompatActivity {
+public class SuccessRegisterActivity extends AppCompatActivity {
     Button btn_explore;
     Animation appSplash, bottomToTop, topToBottom;
     ImageView iconSuccess;
@@ -38,7 +38,7 @@ public class SuccessRegisterAct extends AppCompatActivity {
         btn_explore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToHome = new Intent(SuccessRegisterAct.this, HomeAct.class);
+                Intent goToHome = new Intent(SuccessRegisterActivity.this, HomeActivity.class);
                 startActivity(goToHome);
             }
         });

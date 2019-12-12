@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,13 +25,13 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
- public class RegisterTwoAct extends AppCompatActivity {
+ public class RegisterTwoActivity extends AppCompatActivity {
 
-    LinearLayout btn_back;
-    Button btn_continue, btnAddPhoto;
-    ImageView imgPhotoRegisterUser;
-    EditText edtNama, edtBio;
-    DatabaseReference reference;
+    LinearLayout linearBtnBack;
+    Button buttonContinue, buttonAddPhoto;
+    ImageView imagePhotoRegisterUser;
+    EditText editNama, editBio;
+    DatabaseReference databaseReference;
     StorageReference firebaseStorage;
 
     Uri uriPhotoLocation;
@@ -49,35 +48,35 @@ import com.squareup.picasso.Picasso;
 
         getUsernameLocal();
 
-        btn_back = findViewById(R.id.btn_back);
-        btn_continue = findViewById(R.id.btn_continue);
-        btnAddPhoto = findViewById(R.id.btn_add_photo);
-        imgPhotoRegisterUser = findViewById(R.id.img_photo_register_user);
-        edtNama = findViewById(R.id.edt_nama);
-        edtBio = findViewById(R.id.edt_bio);
+        linearBtnBack = findViewById(R.id.btn_back);
+        buttonContinue = findViewById(R.id.btn_continue);
+        buttonAddPhoto = findViewById(R.id.btn_add_photo);
+        imagePhotoRegisterUser = findViewById(R.id.img_photo_register_user);
+        editNama = findViewById(R.id.edt_nama);
+        editBio = findViewById(R.id.edt_bio);
 
-        btnAddPhoto.setOnClickListener(new View.OnClickListener() {
+        buttonAddPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 findPhoto();
             }
         });
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
+        linearBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backToRegisterOne = new Intent(RegisterTwoAct.this, RegisterOneAct.class);
+                Intent backToRegisterOne = new Intent(RegisterTwoActivity.this, RegisterOneActivity.class);
                 startActivity(backToRegisterOne);
             }
         });
 
-        btn_continue.setOnClickListener(new View.OnClickListener() {
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn_continue.setEnabled(false);
-                btn_continue.setText("Loading...");
+                buttonContinue.setEnabled(false);
+                buttonContinue.setText("Loading...");
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(new_username_key);
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(new_username_key);
                 firebaseStorage = FirebaseStorage.getInstance().getReference().child("Photousers").child(new_username_key);
 
                 if (uriPhotoLocation != null) {
@@ -87,14 +86,14 @@ import com.squareup.picasso.Picasso;
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             String uriPhoto = taskSnapshot.getStorage().getDownloadUrl().toString();
-                            reference.getRef().child("url_photo_profile").setValue(uriPhoto);
-                            reference.getRef().child("nama_lengkap").setValue(edtNama.getText().toString());
-                            reference.getRef().child("bio").setValue(edtBio.getText().toString());
+                            databaseReference.getRef().child("url_photo_profile").setValue(uriPhoto);
+                            databaseReference.getRef().child("nama_lengkap").setValue(editNama.getText().toString());
+                            databaseReference.getRef().child("bio").setValue(editBio.getText().toString());
                         }
                     }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                            Intent goToSuccessRegister = new Intent(RegisterTwoAct.this, SuccessRegisterAct.class);
+                            Intent goToSuccessRegister = new Intent(RegisterTwoActivity.this, SuccessRegisterActivity.class);
                             startActivity(goToSuccessRegister);
                         }
                     });
@@ -123,7 +122,7 @@ import com.squareup.picasso.Picasso;
 
          if (requestCode == photoMax && resultCode == RESULT_OK && data != null && data.getData() != null) {
              uriPhotoLocation = data.getData();
-             Picasso.with(this).load(uriPhotoLocation).centerCrop().fit().into(imgPhotoRegisterUser);
+             Picasso.with(this).load(uriPhotoLocation).centerCrop().fit().into(imagePhotoRegisterUser);
          }
      }
 
