@@ -4,9 +4,9 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -88,7 +88,7 @@ import com.squareup.picasso.Picasso;
                     storageReference.putFile(uriPhotoLocation).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String uriPhoto = taskSnapshot.getDownloadUrl().toString();
+                            String uriPhoto = taskSnapshot.getStorage().getDownloadUrl().toString();
                             databaseReference.getRef().child("url_photo_profile").setValue(uriPhoto);
                             databaseReference.getRef().child("nama_lengkap").setValue(editNama.getText().toString());
                             databaseReference.getRef().child("bio").setValue(editBio.getText().toString());
