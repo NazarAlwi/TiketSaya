@@ -92,7 +92,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/mmedium"
-                android:text="Angga Risky"
                 android:textColor="@color/whitePrimary"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/view2"
@@ -105,7 +104,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/mlight"
-                android:text="Traveller"
                 android:textColor="@color/whitePrimary"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/view2"
@@ -118,7 +116,6 @@
                 android:layout_marginTop="36dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/mmedium"
-                android:text="$ 280"
                 android:textColor="@color/greenPrimary"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -197,6 +194,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btn_ticket_torri"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -220,6 +218,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btn_ticket_pagoda"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -251,6 +250,7 @@
                     android:weightSum="3">
 
                     <LinearLayout
+                        android:id="@+id/btn_ticket_candi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -274,6 +274,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btn_ticket_sphinx"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -297,6 +298,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btn_ticket_monaas"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
