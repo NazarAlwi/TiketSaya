@@ -46,6 +46,9 @@ public class RegisterOneActivity extends AppCompatActivity {
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonContinue.setEnabled(false);
+                buttonContinue.setText("Loading...");
+
                 SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(mUsernameKey, editUsername.getText().toString());

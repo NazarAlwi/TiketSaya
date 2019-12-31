@@ -73,19 +73,22 @@ import com.squareup.picasso.Picasso;
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // ubah state menjadi loading
                 buttonContinue.setEnabled(false);
                 buttonContinue.setText("Loading...");
 
+                // menyimpan kepada firebase
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(new_username_key);
                 firebaseStorage = FirebaseStorage.getInstance().getReference().child("Photousers").child(new_username_key);
 
+                // validasi untuk file (apakah ada?)
                 if (uriPhotoLocation != null) {
-                    StorageReference storageReference = firebaseStorage.child(System.currentTimeMillis() + "," + getFileExtension(uriPhotoLocation));
+                    StorageReference storageReference = firebaseStorage.child(System.currentTimeMillis() + "." + getFileExtension(uriPhotoLocation));
 
                     storageReference.putFile(uriPhotoLocation).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String uriPhoto = taskSnapshot.getStorage().getDownloadUrl().toString();
+                            String uriPhoto = taskSnapshot.getDownloadUrl().toString();
                             databaseReference.getRef().child("url_photo_profile").setValue(uriPhoto);
                             databaseReference.getRef().child("nama_lengkap").setValue(editNama.getText().toString());
                             databaseReference.getRef().child("bio").setValue(editBio.getText().toString());
