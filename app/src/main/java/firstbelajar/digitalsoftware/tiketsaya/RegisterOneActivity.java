@@ -30,11 +30,11 @@ public class RegisterOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_one);
 
-        linearBtnBack = findViewById(R.id.btn_back);
-        buttonContinue = findViewById(R.id.btn_continue);
-        editUsername = findViewById(R.id.edt_username);
-        editPassword = findViewById(R.id.edt_password);
-        editEmailAddress = findViewById(R.id.edt_email_address);
+        linearBtnBack = findViewById(R.id.btn_back_reg_one);
+        buttonContinue = findViewById(R.id.btn_continue_reg_one);
+        editUsername = findViewById(R.id.username);
+        editPassword = findViewById(R.id.password);
+        editEmailAddress = findViewById(R.id.email_address);
 
         linearBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,11 +49,13 @@ public class RegisterOneActivity extends AppCompatActivity {
                 buttonContinue.setEnabled(false);
                 buttonContinue.setText("Loading...");
 
+                // Menyimpan data ke local storage
                 SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(mUsernameKey, editUsername.getText().toString());
                 editor.apply();
 
+                // Menyimpan ke database
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(editUsername.getText().toString());
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

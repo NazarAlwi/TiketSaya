@@ -26,6 +26,9 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
  public class RegisterTwoActivity extends AppCompatActivity {
+    public static final String USERNAME_KEY = "username_key";
+    private String mUsernameKey = "";
+    String new_username_key = "";
 
     LinearLayout linearBtnBack;
     Button buttonContinue, buttonAddPhoto;
@@ -37,9 +40,6 @@ import com.squareup.picasso.Picasso;
     Uri uriPhotoLocation;
     Integer photoMax = 1;
 
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
-    String new_username_key = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +48,12 @@ import com.squareup.picasso.Picasso;
 
         getUsernameLocal();
 
-        linearBtnBack = findViewById(R.id.btn_back);
-        buttonContinue = findViewById(R.id.btn_continue);
+        linearBtnBack = findViewById(R.id.btn_back_reg_two);
+        buttonContinue = findViewById(R.id.btn_continue_reg_two);
         buttonAddPhoto = findViewById(R.id.btn_add_photo);
         imagePhotoRegisterUser = findViewById(R.id.img_photo_register_user);
-        editNama = findViewById(R.id.edt_nama);
-        editBio = findViewById(R.id.edt_bio);
+        editNama = findViewById(R.id.nama_lengkap);
+        editBio = findViewById(R.id.bio);
 
         buttonAddPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,21 +83,32 @@ import com.squareup.picasso.Picasso;
 
                 // validasi untuk file (apakah ada?)
                 if (uriPhotoLocation != null) {
-                    StorageReference storageReference = firebaseStorage.child(System.currentTimeMillis() + "." + getFileExtension(uriPhotoLocation));
+                    final StorageReference storageReference = firebaseStorage.child(System.currentTimeMillis() + "." + getFileExtension(uriPhotoLocation));
 
                     storageReference.putFile(uriPhotoLocation).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String uriPhoto = taskSnapshot.getStorage().getDownloadUrl().toString();
-                            databaseReference.getRef().child("url_photo_profile").setValue(uriPhoto);
-                            databaseReference.getRef().child("nama_lengkap").setValue(editNama.getText().toString());
-                            databaseReference.getRef().child("bio").setValue(editBio.getText().toString());
+
+                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String uriPhoto = uri.toString();
+                                    databaseReference.getRef().child("url_photo_profile").setValue(uriPhoto);
+                                    databaseReference.getRef().child("nama_lengkap").setValue(editNama.getText().toString());
+                                    databaseReference.getRef().child("bio").setValue(editBio.getText().toString());
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    Intent goToSuccessRegister = new Intent(RegisterTwoActivity.this, SuccessRegisterActivity.class);
+                                    startActivity(goToSuccessRegister);
+                                }
+                            });
                         }
                     }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                            Intent goToSuccessRegister = new Intent(RegisterTwoActivity.this, SuccessRegisterActivity.class);
-                            startActivity(goToSuccessRegister);
+
                         }
                     });
                 }
@@ -131,6 +142,6 @@ import com.squareup.picasso.Picasso;
 
      private void getUsernameLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        new_username_key = sharedPreferences.getString(username_key, "");
+        new_username_key = sharedPreferences.getString(mUsernameKey, "");
      }
  }

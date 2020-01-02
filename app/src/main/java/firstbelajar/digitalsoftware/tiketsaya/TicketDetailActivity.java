@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +22,7 @@ public class TicketDetailActivity extends AppCompatActivity {
     Button btnBuyTicket;
     TextView tvTitleTicket, tvLocationTicket, tvPhotoSpotTicket, tvWifiTicket, tvFestivalTicket, tvShortDescTicket;
     ImageView imgHeaderTicketDetail;
+    LinearLayout btnBack;
 
     DatabaseReference reference;
 
@@ -37,6 +39,7 @@ public class TicketDetailActivity extends AppCompatActivity {
         tvShortDescTicket = findViewById(R.id.short_desc_ticket);
         btnBuyTicket = findViewById(R.id.btn_buy_ticket);
         imgHeaderTicketDetail = findViewById(R.id.img_header_ticket_detail);
+        btnBack = findViewById(R.id.btn_back_ticket_detail);
 
         // Mengambil data dari Intent
         Bundle bundle = getIntent().getExtras();
@@ -56,7 +59,7 @@ public class TicketDetailActivity extends AppCompatActivity {
                 tvShortDescTicket.setText(dataSnapshot.child("short_desc").getValue().toString());
 
                 Picasso.with(TicketDetailActivity.this)
-                        .load(dataSnapshot.child("url_photo_profile").getValue().toString())
+                        .load(dataSnapshot.child("url_thumbnail").getValue().toString())
                         .centerCrop()
                         .fit()
                         .into(imgHeaderTicketDetail);
@@ -73,6 +76,13 @@ public class TicketDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent goToCheckout = new Intent(TicketDetailActivity.this, TicketCheckoutActivity.class);
                 startActivity(goToCheckout);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

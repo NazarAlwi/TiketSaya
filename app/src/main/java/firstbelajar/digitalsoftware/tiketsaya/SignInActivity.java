@@ -18,15 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
+    public static final String USERNAME_KEY = "username_key";
+    private String mUsernameKey = "";
 
     TextView btn_new_account;
     Button btn_sign_in;
     EditText edtUsername, edtPassword;
 
     DatabaseReference databaseReference;
-
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +75,7 @@ public class SignInActivity extends AppCompatActivity {
                                         //Simpan ke lokal
                                         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                                        editor.putString(username_key, edtUsername.getText().toString());
+                                        editor.putString(mUsernameKey, edtUsername.getText().toString());
                                         editor.apply();
 
                                         Intent goToHome = new Intent(SignInActivity.this, HomeActivity.class);
