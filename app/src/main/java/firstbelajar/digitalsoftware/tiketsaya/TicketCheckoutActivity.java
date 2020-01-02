@@ -38,11 +38,12 @@ public class TicketCheckoutActivity extends AppCompatActivity {
     Integer hargaTicket;
 
     Integer nomorTransaksi = new Random().nextInt();
+    Integer sisaBalance;
 
     String dateWisata;
     String timeWisata;
 
-    DatabaseReference wisataReference, userReference, userTicketPaymentReference;
+    DatabaseReference wisataReference, userReference, userTicketPaymentReference, userBalanceReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +124,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                 }
 
                 totalHarga = hargaTicket * count;
-                tvTotalHarga.setText("US$ " + totalHarga + "");
+                tvTotalHarga.setText(String.format(getResources().getString(R.string.dolar), String.valueOf(totalHarga)));
 
                 if (myBalance < totalHarga) {
                     tvMyBalance.setTextColor(getResources().getColor(R.color.redPrimary));
@@ -148,7 +149,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                 }
 
                 totalHarga = hargaTicket * count;
-                tvTotalHarga.setText("US$ " + totalHarga + "");
+                tvTotalHarga.setText(String.format(getResources().getString(R.string.dolar), String.valueOf(totalHarga)));
 
                 if (myBalance > totalHarga) {
                     tvMyBalance.setTextColor(getResources().getColor(R.color.bluePrimary));
@@ -168,6 +169,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                 userTicketPaymentReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        userTicketPaymentReference.getRef().child("id_tiket").setValue(nomorTransaksi);
                         userTicketPaymentReference.getRef().child("nama_wisata").setValue(tvNamaWisata.getText().toString());
                         userTicketPaymentReference.getRef().child("lokasi").setValue(tvLokasi.getText().toString());
                         userTicketPaymentReference.getRef().child("ketentuan").setValue(tvKetentuan.getText().toString());
@@ -185,6 +187,23 @@ public class TicketCheckoutActivity extends AppCompatActivity {
 
                     }
                 });
+
+                // Update data balance user yang saat ini login
+                // Mengambil data user dari firebase
+                userBalanceReference = FirebaseDatabase.getInstance().getReference().child("Users").child(new_username_key);
+                userBalanceReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        sisaBalance = myBalance - totalHarga;
+                        userBalanceReference.getRef().child("balance").setValue(sisaBalance);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
     }
