@@ -43,7 +43,7 @@ public class TicketDetailActivity extends AppCompatActivity {
 
         // Mengambil data dari Intent
         Bundle bundle = getIntent().getExtras();
-        String jenisTiket = bundle.getString("Jenis tiket");
+        final String jenisTiket = bundle.getString("Jenis tiket");
 
         // Mengambil data dari firebase berdasarkan intent
         reference = FirebaseDatabase.getInstance().getReference().child("wisata").child(jenisTiket);
@@ -75,6 +75,7 @@ public class TicketDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent goToCheckout = new Intent(TicketDetailActivity.this, TicketCheckoutActivity.class);
+                goToCheckout.putExtra("Jenis Tiket", jenisTiket);
                 startActivity(goToCheckout);
             }
         });

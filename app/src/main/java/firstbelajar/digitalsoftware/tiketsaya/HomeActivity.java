@@ -112,7 +112,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent goToDetailTicket = new Intent(HomeActivity.this, TicketDetailActivity.class);
-                goToDetailTicket.putExtra("Jenis tiket", "Sphinx");
+                goToDetailTicket.putExtra("Jenis tiket", "Sphink");
                 startActivity(goToDetailTicket);
             }
         });

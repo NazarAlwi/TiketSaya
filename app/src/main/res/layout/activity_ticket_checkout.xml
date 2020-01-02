@@ -92,22 +92,23 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/photo_spot_ticket"
+                    android:id="@+id/tv_nama_wisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mregular"
-                    android:text="Menara Pisa"
                     android:textColor="@color/blackPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:text="Menara Pisa" />
 
                 <TextView
+                    android:id="@+id/tv_lokasi_wisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/mlight"
-                    android:text="Pisa City, Italy"
                     android:textColor="@color/grayPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="Pisa City, Italy" />
 
             </LinearLayout>
 
@@ -128,12 +129,12 @@
                     android:id="@+id/ticket_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:textSize="18sp"
                     android:textColor="@color/blackPrimary"
-                    android:fontFamily="@font/mregular"/>
+                    android:fontFamily="@font/mregular"
+                    tools:text="2"/>
 
                 <Button
                     android:id="@+id/btn_plus"
@@ -145,15 +146,15 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/short_tos_ticket"
+            android:id="@+id/tv_short_tos_ticket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/mlight"
             android:lineSpacingExtra="8dp"
-            android:text="Anak yang berumur lebih dari 3 tahun wajib membeli tiket."
             android:textColor="@color/grayPrimary"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:text="Anak yang berumur lebih dari 3 tahun wajib membeli tiket." />
 
     </LinearLayout>
 
@@ -200,11 +201,11 @@
                 android:id="@+id/tv_my_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="US$ 329"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"
                 android:layout_marginLeft="4dp"
-                android:textColor="@color/bluePrimary"/>
+                android:textColor="@color/bluePrimary"
+                tools:text="US$ 329" />
 
             <ImageView
                 android:id="@+id/img_warning"
@@ -237,13 +238,13 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_total_harga"
+                android:id="@+id/tv_total_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="US$ 329"
                 android:textSize="32sp"
                 android:layout_marginLeft="50dp"
-                android:textColor="@color/greenPrimary"/>
+                android:textColor="@color/greenPrimary"
+                tools:text="US$ 329" />
 
         </LinearLayout>
 
