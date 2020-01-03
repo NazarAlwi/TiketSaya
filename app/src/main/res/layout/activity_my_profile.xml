@@ -82,7 +82,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="270dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
@@ -120,104 +120,109 @@
             android:layout_marginBottom="16dp"
             android:background="#EDEDED" />
 
-        <LinearLayout
-            android:id="@+id/my_ticket"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp"
+<!--        <LinearLayout-->
+<!--            android:id="@+id/my_ticket"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" >-->
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/ic_ticket_buy"-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/photo_spot_ticket"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/mregular"-->
+<!--                    android:text="Menara Pisa"-->
+<!--                    android:textColor="@color/blackPrimary"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:fontFamily="@font/mlight"-->
+<!--                    android:text="Pisa City, Italy"-->
+<!--                    android:textColor="@color/grayPrimary"-->
+<!--                    android:textSize="12sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:fontFamily="@font/mlight"-->
+<!--                android:text="3 Tickets"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textColor="@color/bluePrimary"-->
+<!--                android:textSize="12sp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" >-->
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/ic_ticket_buy"-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/wifi_ticket"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/mregular"-->
+<!--                    android:text="Torri"-->
+<!--                    android:textColor="@color/blackPrimary"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:fontFamily="@font/mlight"-->
+<!--                    android:text="Village, Jakarta"-->
+<!--                    android:textColor="@color/grayPrimary"-->
+<!--                    android:textSize="12sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:fontFamily="@font/mlight"-->
+<!--                android:text="3 Tickets"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textColor="@color/bluePrimary"-->
+<!--                android:textSize="12sp" />-->
+<!--        </LinearLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_ticket_place"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:src="@drawable/ic_ticket_buy"
-                android:layout_width="55dp"
-                android:layout_height="55dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginLeft="12dp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/photo_spot_ticket"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mregular"
-                    android:text="Menara Pisa"
-                    android:textColor="@color/blackPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="Pisa City, Italy"
-                    android:textColor="@color/grayPrimary"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:fontFamily="@font/mlight"
-                android:text="3 Tickets"
-                android:layout_gravity="center"
-                android:textColor="@color/bluePrimary"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:src="@drawable/ic_ticket_buy"
-                android:layout_width="55dp"
-                android:layout_height="55dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginLeft="12dp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/wifi_ticket"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mregular"
-                    android:text="Torri"
-                    android:textColor="@color/blackPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="Village, Jakarta"
-                    android:textColor="@color/grayPrimary"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:fontFamily="@font/mlight"
-                android:text="3 Tickets"
-                android:layout_gravity="center"
-                android:textColor="@color/bluePrimary"
-                android:textSize="12sp" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_ticket_my_profile"/>
     </LinearLayout>
 
     <Button

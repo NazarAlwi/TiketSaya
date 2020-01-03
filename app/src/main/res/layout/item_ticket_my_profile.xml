@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_ticket"
+    android:orientation="horizontal"
+    android:layout_marginBottom="16dp"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@drawable/ic_ticket_buy"
+        android:layout_width="55dp"
+        android:layout_height="55dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_nama_wisata_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mregular"
+            android:textColor="@color/blackPrimary"
+            android:textSize="16sp"
+            tools:text="Menara Pisa" />
+
+        <TextView
+            android:id="@+id/tv_lokasi_wisata_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/mlight"
+            android:textColor="@color/grayPrimary"
+            android:textSize="12sp"
+            tools:text="Pisa City, Italy" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_jumlah_ticket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:fontFamily="@font/mlight"
+        android:layout_gravity="center"
+        android:textColor="@color/bluePrimary"
+        android:textSize="12sp"
+        tools:text="3 Tickets" />
+</LinearLayout>

@@ -10,4 +10,5 @@
     <string name="bio_label">Bio</string>
     <string name="explore">Explore Now</string>
     <string name="dolar">US$ %s</string>
+    <string name="tickets">%s Tickets</string>
 </resources>
