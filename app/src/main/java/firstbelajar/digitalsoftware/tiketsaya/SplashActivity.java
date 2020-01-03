@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
+    public static final String USERNAME_KEY = "username_key";
+    private String mUsernameKey = "";
+    String new_username_key = "";
+
     Animation appSplash, bottomToTop;
     ImageView appLogo;
     TextView appSubtitle;
-
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
-    String username_key_new = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,9 @@ public class SplashActivity extends AppCompatActivity {
 
     private void getUsernameLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        username_key_new = sharedPreferences.getString(username_key, "");
+        new_username_key = sharedPreferences.getString(mUsernameKey, "");
 
-        if (username_key_new.isEmpty()) {
+        if (new_username_key.isEmpty()) {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

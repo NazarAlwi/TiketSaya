@@ -57,10 +57,6 @@ public class SuccessBuyTicketActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        if (!shoulA()) {
-//            doSomething();
-//        } else {
-//            super.onBackPressed();
-//        }
+
     }
 }
