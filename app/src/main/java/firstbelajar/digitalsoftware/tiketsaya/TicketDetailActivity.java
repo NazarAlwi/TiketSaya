@@ -46,7 +46,7 @@ public class TicketDetailActivity extends AppCompatActivity {
         final String jenisTiket = bundle.getString("Jenis tiket");
 
         // Mengambil data dari firebase berdasarkan intent
-        reference = FirebaseDatabase.getInstance().getReference().child("wisata").child(jenisTiket);
+        reference = FirebaseDatabase.getInstance().getReference().child("Wisata").child(jenisTiket);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

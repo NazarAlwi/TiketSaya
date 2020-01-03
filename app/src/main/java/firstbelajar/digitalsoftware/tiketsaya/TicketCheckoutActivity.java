@@ -84,7 +84,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
         });
 
         // Mengambil data wisata dari firebase
-        wisataReference = FirebaseDatabase.getInstance().getReference().child("wisata").child(jenisTiket);
+        wisataReference = FirebaseDatabase.getInstance().getReference().child("Wisata").child(jenisTiket);
         wisataReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -1,7 +1,10 @@
 package firstbelajar.digitalsoftware.tiketsaya;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -34,5 +37,30 @@ public class SuccessBuyTicketActivity extends AppCompatActivity {
         tvSubtitleSuccessBuy.startAnimation(topToBottom);
         btnViewTickets.startAnimation(bottomToTop);
         btnMyDashboard.startAnimation(bottomToTop);
+
+        btnViewTickets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToProfile = new Intent(SuccessBuyTicketActivity.this, MyProfileActivity.class);
+                startActivity(goToProfile);
+            }
+        });
+
+        btnMyDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToDashboard = new Intent(SuccessBuyTicketActivity.this, HomeActivity.class);
+                startActivity(goToDashboard);
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+//        if (!shoulA()) {
+//            doSomething();
+//        } else {
+//            super.onBackPressed();
+//        }
     }
 }
