@@ -173,7 +173,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                         userTicketPaymentReference.getRef().child("nama_wisata").setValue(tvNamaWisata.getText().toString());
                         userTicketPaymentReference.getRef().child("lokasi").setValue(tvLokasi.getText().toString());
                         userTicketPaymentReference.getRef().child("ketentuan").setValue(tvKetentuan.getText().toString());
-                        userTicketPaymentReference.getRef().child("jumlah_tiket").setValue(count);
+                        userTicketPaymentReference.getRef().child("jumlah_tiket").setValue(count.toString());
 
                         userTicketPaymentReference.getRef().child("date_wisata").setValue(dateWisata);
                         userTicketPaymentReference.getRef().child("time_wisata").setValue(timeWisata);
