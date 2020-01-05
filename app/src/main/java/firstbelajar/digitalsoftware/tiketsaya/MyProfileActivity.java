@@ -30,7 +30,7 @@ public class MyProfileActivity extends AppCompatActivity {
     String new_username_key = "";
 
     LinearLayout linearBtnMyTicket;
-    Button buttonEditProfile;
+    Button buttonEditProfile, btnBack, btnSignOut;
     TextView tvNamaLengkap, tvBio;
     ImageView imgPhotoProfile;
     RecyclerView recyclerView;
@@ -53,6 +53,8 @@ public class MyProfileActivity extends AppCompatActivity {
         tvBio = findViewById(R.id.tv_bio_profile_user);
         imgPhotoProfile = findViewById(R.id.img_photo_profile_user);
         recyclerView = findViewById(R.id.my_ticket_place);
+        btnBack = findViewById(R.id.btn_back_to_home);
+        btnSignOut = findViewById(R.id.btn_sign_out);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myTickets = new ArrayList<>();
@@ -74,6 +76,14 @@ public class MyProfileActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToHome = new Intent(MyProfileActivity.this, HomeActivity.class);
+                startActivity(goToHome);
             }
         });
 
@@ -100,6 +110,20 @@ public class MyProfileActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Menghapus data ke local storage
+                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(mUsernameKey, null);
+                editor.apply();
+
+                Intent goToSignIn = new Intent(MyProfileActivity.this, SignInActivity.class);
+                startActivity(goToSignIn);
             }
         });
     }
