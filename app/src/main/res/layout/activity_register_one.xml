@@ -168,7 +168,7 @@
         android:fontFamily="@font/mmedium"
         android:text="@string/back"
         android:textColor="#DBDBDB"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent" />
@@ -184,7 +184,7 @@
         android:fontFamily="@font/mmedium"
         android:text="@string/continue_label"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
