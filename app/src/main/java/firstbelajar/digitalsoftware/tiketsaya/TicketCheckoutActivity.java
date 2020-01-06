@@ -151,12 +151,13 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                 totalHarga = hargaTicket * count;
                 tvTotalHarga.setText(String.format(getResources().getString(R.string.dolar), String.valueOf(totalHarga)));
 
-                if (myBalance > totalHarga) {
+                if (myBalance >= totalHarga) {
                     tvMyBalance.setTextColor(getResources().getColor(R.color.bluePrimary));
                     imgWarning.setVisibility(View.GONE);
-
                     btnBuyTicket.animate().translationY(0).alpha(1).setDuration(300).start();
                     btnBuyTicket.setEnabled(true);
+                } else {
+                    imgWarning.startAnimation(shake);
                 }
             }
         });
