@@ -20,8 +20,7 @@ public class RegisterOneActivity extends AppCompatActivity {
     public static final String USERNAME_KEY = "username_key";
     private String mUsernameKey = "";
 
-    LinearLayout linearBtnBack;
-    Button buttonContinue;
+    Button buttonContinue, buttonBack;
     EditText editUsername, editPassword, editEmailAddress;
     DatabaseReference databaseReference;
 
@@ -30,24 +29,24 @@ public class RegisterOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_one);
 
-        linearBtnBack = findViewById(R.id.btn_back_reg_one);
+        buttonBack = findViewById(R.id.btn_back_reg_one);
         buttonContinue = findViewById(R.id.btn_continue_reg_one);
         editUsername = findViewById(R.id.username);
         editPassword = findViewById(R.id.password);
         editEmailAddress = findViewById(R.id.email_address);
 
-        linearBtnBack.setOnClickListener(new View.OnClickListener() {
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backToSignIn = new Intent(RegisterOneActivity.this, SignInActivity.class);
-                startActivity(backToSignIn);
+                onBackPressed();
             }
         });
+
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 buttonContinue.setEnabled(false);
-                buttonContinue.setText("Loading...");
+                buttonContinue.setText(getString(R.string.loading_btn));
 
                 // Menyimpan data ke local storage
                 SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
