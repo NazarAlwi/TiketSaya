@@ -18,10 +18,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class TicketDetailActivity extends AppCompatActivity {
-    Button btnBuyTicket;
+    Button btnBuyTicket, btnBack;
     TextView tvTitleTicket, tvLocationTicket, tvPhotoSpotTicket, tvWifiTicket, tvFestivalTicket, tvShortDescTicket;
     ImageView imgHeaderTicketDetail;
-    LinearLayout btnBack;
 
     DatabaseReference reference;
 
