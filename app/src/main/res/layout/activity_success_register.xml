@@ -9,42 +9,41 @@
 
     <ImageView
         android:id="@+id/icon_success"
-        android:layout_width="276dp"
-        android:layout_height="320dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:src="@drawable/icon_success_signup"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/mregular"
-        android:text="Kamu Hebat"
+        android:text="@string/success_register_title"
         android:textColor="@color/blackPrimary"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_success" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
         android:id="@+id/sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="48dp"
         android:fontFamily="@font/mlight"
         android:lineSpacingExtra="9dp"
-        android:text="Selamat datang pada TiketSaya\ndan nikmati wisatamu"
+        android:text="@string/success_register_note"
         android:textAlignment="center"
         android:textColor="@color/grayPrimary"
         android:textSize="20sp"
@@ -54,19 +53,25 @@
 
     <Button
         android:id="@+id/btn_explore"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/bg_btn_blue_primary"
         android:fontFamily="@font/mmedium"
         android:text="@string/explore"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/sub_title"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="56dp" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
