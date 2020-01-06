@@ -30,8 +30,7 @@ import com.squareup.picasso.Picasso;
     private String mUsernameKey = "";
     String new_username_key = "";
 
-    LinearLayout linearBtnBack;
-    Button buttonContinue, buttonAddPhoto;
+    Button buttonContinue, buttonAddPhoto, buttonBack;
     ImageView imagePhotoRegisterUser;
     EditText editNama, editBio;
     DatabaseReference databaseReference;
@@ -48,7 +47,7 @@ import com.squareup.picasso.Picasso;
 
         getUsernameLocal();
 
-        linearBtnBack = findViewById(R.id.btn_back_reg_two);
+        buttonBack = findViewById(R.id.btn_back_reg_two);
         buttonContinue = findViewById(R.id.btn_continue_reg_two);
         buttonAddPhoto = findViewById(R.id.btn_add_photo);
         imagePhotoRegisterUser = findViewById(R.id.img_photo_register_user);
@@ -62,11 +61,10 @@ import com.squareup.picasso.Picasso;
             }
         });
 
-        linearBtnBack.setOnClickListener(new View.OnClickListener() {
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backToRegisterOne = new Intent(RegisterTwoActivity.this, RegisterOneActivity.class);
-                startActivity(backToRegisterOne);
+                onBackPressed();
             }
         });
 
