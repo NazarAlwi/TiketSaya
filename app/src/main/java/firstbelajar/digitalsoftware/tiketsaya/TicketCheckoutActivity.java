@@ -28,7 +28,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
     private String mUsernameKey = "";
     String new_username_key = "";
 
-    Button btnBuyTicket, btnMinus, btnPlus;
+    Button btnBuyTicket, btnMinus, btnPlus, btnBack;
     TextView ticket_count, tvTotalHarga, tvMyBalance, tvNamaWisata, tvLokasi, tvKetentuan;
     Animation shake;
     ImageView imgWarning;
@@ -66,6 +66,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
         tvNamaWisata = findViewById(R.id.tv_nama_wisata);
         tvLokasi = findViewById(R.id.tv_lokasi_wisata);
         tvKetentuan = findViewById(R.id.tv_short_tos_ticket);
+        btnBack = findViewById(R.id.btn_back_to_ticket_detail);
         shake = AnimationUtils.loadAnimation(this, R.anim.shake);
 
         // Mengambil data user dari firebase
@@ -205,6 +206,13 @@ public class TicketCheckoutActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
