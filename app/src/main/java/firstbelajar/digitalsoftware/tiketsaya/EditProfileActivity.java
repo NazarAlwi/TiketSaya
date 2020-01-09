@@ -40,8 +40,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private Uri mUriPhotoLocation;
     private EditText edtName, edtBio, edtUsername, edtEmail, edtPassword;
     private ImageView imgProfile;
-    private Button btnSave, btnEditPhoto;
-    private LinearLayout btnBack;
+    private Button btnSave, btnEditPhoto, btnBack;
     private Integer photoMax = 1;
 
     @Override

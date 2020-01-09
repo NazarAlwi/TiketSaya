@@ -9,8 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp">
+        android:layout_height="wrap_content">
 
         <View
             android:layout_width="match_parent"
@@ -60,10 +59,12 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/bg_layout_white"
             android:orientation="vertical"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +73,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
                 android:layout_marginLeft="24dp"
+                android:layout_marginTop="120dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
                 android:orientation="vertical">
@@ -277,40 +278,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-        <LinearLayout
+        <Button
             android:id="@+id/btn_back_edit_profile"
-            android:layout_width="90dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/bg_btn_white_primary"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@+id/btn_continue_edit_profile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_back" />
-
-        </LinearLayout>
+            android:fontFamily="@font/mmedium"
+            android:text="@string/back"
+            android:textColor="#DBDBDB"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline11"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_save_profile"
-            android:layout_width="238dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/bg_btn_blue_primary"
             android:fontFamily="@font/mmedium"
-            android:text="SAVE PROFILE"
+            android:text="@string/save_profile"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintStart_toStartOf="@+id/guideline11" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
