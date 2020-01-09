@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MyProfileTicketDetailActivity extends AppCompatActivity {
     private DatabaseReference mReference;
     private TextView tvNamaWisata, tvLokasi, tvDate, tvTime, tvKetentuan;
-    private LinearLayout btnBack;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

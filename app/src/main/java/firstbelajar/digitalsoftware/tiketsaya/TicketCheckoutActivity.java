@@ -33,9 +33,9 @@ public class TicketCheckoutActivity extends AppCompatActivity {
     Animation shake;
     ImageView imgWarning;
     Integer count = 1;
-    Integer myBalance;
+    Integer myBalance = 0;
     Integer totalHarga = 0;
-    Integer hargaTicket;
+    Integer hargaTicket = 0;
 
     Integer nomorTransaksi = new Random().nextInt();
     Integer sisaBalance;
@@ -74,7 +74,7 @@ public class TicketCheckoutActivity extends AppCompatActivity {
         userReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                myBalance = Integer.valueOf(dataSnapshot.child("balance").getValue().toString()) ;
+                myBalance = Integer.valueOf(dataSnapshot.child("balance").getValue().toString());
                 tvMyBalance.setText(String.format(getResources().getString(R.string.dolar), String.valueOf(myBalance)));
             }
 
