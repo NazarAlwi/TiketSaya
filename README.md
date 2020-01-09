@@ -9,4 +9,4 @@ This application is my practice. in this application I simulate online ticket re
 ![device-2020-01-09-191942](https://user-images.githubusercontent.com/37035339/72067549-8ceea000-3315-11ea-92a3-fd174a9ad01c.png)
 
 ## Try this app
-You can try the application that I made, but for now this application does not yet exist in Play Store. You can download this application from my [Drive](https://drive.google.com/drive/folders/1MGpbA8Plxvkn3qowgT-tyCxpSHH448TC?usp=sharing). And just install the .apk file on your Android device.
+You can try the application that I made, but for now this application does not yet exist in Play Store. You can download this application from my [Drive](https://drive.google.com/drive/folders/1MGpbA8Plxvkn3qowgT-tyCxpSHH448TC?usp=sharing). And just install the apk file on your Android device.
