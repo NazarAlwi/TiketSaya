@@ -11,4 +11,20 @@
     <string name="explore">Explore Now</string>
     <string name="dolar">US$ %s</string>
     <string name="tickets">%s Tickets</string>
+    <string name="new_account">New Account</string>
+    <string name="get_started_text">Discover The Beauty Of Earth</string>
+    <string name="back">Back</string>
+    <string name="loading_btn">Loading...</string>
+    <string name="success_register_note">Selamat datang pada TiketSaya dan nikmati wisatamu</string>
+    <string name="success_register_title">Kamu Hebat</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="buy_ticket">Buy Ticket</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="success_buy_ticket_title">Selamat Menikmati</string>
+    <string name="success_buy_ticket_subtitle">Anda berhasil membeli tiket dan selamat berlibur</string>
+    <string name="my_dashboard">My Dashboard</string>
+    <string name="view_tickets">View Tickets</string>
+    <string name="refund_now">Refund Now</string>
+    <string name="save_profile">Save Profile</string>
 </resources>
