@@ -82,8 +82,9 @@ public class MyProfileActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToHome = new Intent(MyProfileActivity.this, HomeActivity.class);
-                startActivity(goToHome);
+                Intent intent = new Intent(MyProfileActivity.this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 

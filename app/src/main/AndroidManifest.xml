@@ -12,7 +12,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".EditProfileActivity"></activity>
         <activity android:name=".MyProfileTicketDetailActivity" />
-        <activity android:name=".MyProfileActivity" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
         <activity android:name=".SuccessBuyTicketActivity" />
         <activity android:name=".TicketCheckoutActivity" />
         <activity android:name=".TicketDetailActivity" />
