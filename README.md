@@ -1,5 +1,5 @@
 # Tiket Saya
-This application is my practice. in this application I simulate online ticket reservations, using firebase to store user data and travel data.
+This application is my practice. In this application I simulate online ticket reservations, using firebase to store user data and travel data.
 
 ![device-2020-01-09-190945](https://user-images.githubusercontent.com/37035339/72067540-8a8c4600-3315-11ea-9882-e3e1a5a438de.png)
 ![device-2020-01-09-191628](https://user-images.githubusercontent.com/37035339/72067543-8b24dc80-3315-11ea-973f-bed2e03c7d7f.png)
@@ -9,4 +9,4 @@ This application is my practice. in this application I simulate online ticket re
 ![device-2020-01-09-191942](https://user-images.githubusercontent.com/37035339/72067549-8ceea000-3315-11ea-92a3-fd174a9ad01c.png)
 
 ## Try this app
-You can try the application that I made, but for now this application does not yet exist in Play Store. You can download this application from my [Drive](https://drive.google.com/drive/folders/1MGpbA8Plxvkn3qowgT-tyCxpSHH448TC?usp=sharing). And just install the apk file on your Android device.
+You can try this application, but for now this application doesn't exist in Play Store. You can download this application from my [Drive](https://drive.google.com/drive/folders/1MGpbA8Plxvkn3qowgT-tyCxpSHH448TC?usp=sharing). And just install the apk file on your Android device.
